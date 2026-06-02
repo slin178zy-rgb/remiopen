@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (C) 2025 QuantumNous
 
 This program is free software: you can redistribute it and/or modify
@@ -84,7 +84,7 @@ const FooterBar = () => {
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
                   >
-                    {t('功能特�?)}
+                    {t('功能特性')}
                   </a>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const FooterBar = () => {
                     rel='noopener noreferrer'
                     className='!text-semi-color-text-1'
                   >
-                    {t('快速开�?)}
+                    {t('快速开始')}
                   </a>
                   <a
                     href='https://docs.newapi.pro/installation/'
@@ -191,7 +191,7 @@ const FooterBar = () => {
         <div className='flex flex-col md:flex-row items-center justify-between w-full max-w-[1110px] gap-6'>
           <div className='flex flex-wrap items-center gap-2'>
             <Typography.Text className='text-sm !text-semi-color-text-1'>
-              © {currentYear} {systemName}. {t('版权所�?)}
+              © {currentYear} {systemName}. {t('版权所有')}
             </Typography.Text>
           </div>
 
