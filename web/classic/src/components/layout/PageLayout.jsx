@@ -109,10 +109,11 @@ const PageLayout = () => {
     if (systemName) {
       document.title = systemName;
     }
-    // 浏览器标签栏图标固定使用默认 logo（R 样式），不受 localStorage 缓存影响
+    // 浏览器标签栏图标使用系统设置的 logo，如果没有设置则使用默认 logo
+    let logoUrl = getLogo();
     let linkElement = document.querySelector("link[rel~='icon']");
     if (linkElement) {
-      linkElement.href = '/logo.png?v=3';
+      linkElement.href = logoUrl + '?v=3';
     }
   }, []);
 
