@@ -104,17 +104,18 @@ const PageLayout = () => {
 
   useEffect(() => {
     loadUser();
-    loadStatus().catch(console.error);
-    let systemName = getSystemName();
-    if (systemName) {
-      document.title = systemName;
-    }
-    // 浏览器标签栏图标使用系统设置的 logo，如果没有设置则使用默认 logo
-    let logoUrl = getLogo();
-    let linkElement = document.querySelector("link[rel~='icon']");
-    if (linkElement) {
-      linkElement.href = logoUrl + '?v=3';
-    }
+    loadStatus().then(() => {
+      // API 返回后，使用后端设置的系统名称和 logo
+      let systemName = getSystemName();
+      if (systemName && systemName !== 'New API') {
+        document.title = systemName;
+      }
+      let logoUrl = getLogo();
+      let linkElement = document.querySelector("link[rel~='icon']");
+      if (linkElement) {
+        linkElement.href = logoUrl + '?v=3';
+      }
+    }).catch(console.error);
   }, []);
 
   useEffect(() => {
