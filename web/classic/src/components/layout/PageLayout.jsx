@@ -112,7 +112,7 @@ const PageLayout = () => {
     // 浏览器标签栏图标固定使用默认 logo（R 样式），不受 localStorage 缓存影响
     let linkElement = document.querySelector("link[rel~='icon']");
     if (linkElement) {
-      linkElement.href = '/logo.png';
+      linkElement.href = '/logo.png?v=3';
     }
   }, []);
 
