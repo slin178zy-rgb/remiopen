@@ -26,6 +26,7 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/slin178zy-rgb/remiopen:latest
+          no-cache: true
 
       - name: SSH 部署到服务器
         uses: appleboy/ssh-action@v1
