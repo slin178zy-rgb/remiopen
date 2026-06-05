@@ -104,18 +104,7 @@ const PageLayout = () => {
 
   useEffect(() => {
     loadUser();
-    loadStatus().then(() => {
-      // API 返回后，使用后端设置的系统名称和 logo
-      let systemName = getSystemName();
-      if (systemName && systemName !== 'New API') {
-        document.title = systemName;
-      }
-      let logoUrl = getLogo();
-      let linkElement = document.querySelector("link[rel~='icon']");
-      if (linkElement) {
-        linkElement.href = logoUrl + '?v=3';
-      }
-    }).catch(console.error);
+    loadStatus().catch(console.error);
   }, []);
 
   useEffect(() => {
